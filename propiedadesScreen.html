@@ -6,12 +6,11 @@
     <title>Document</title>
     <script>
         window.onload=function(){
-            
             escribir();
-           screen.orientation.addEventListener("change",escribir)
+           screen.orientation.addEventListener("change",escribir);
         }
         function escribir(){
-            texto.innerHTML+="<p>Ancho: "+screen.width+"</p>";
+            texto.innerHTML="<p>Ancho: "+screen.width+"</p>";
             texto.innerHTML+="<p>Altura: "+screen.width+"</p>";
             texto.innerHTML+="<p>Ancho sin barras: "+screen.availWidth+"</p>";
             texto.innerHTML+="<p>Altura sin barras: "+screen.availHeight+"</p>";
