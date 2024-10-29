@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            
+            escribir();
+           screen.orientation.addEventListener("change",escribir)
+        }
+        function escribir(){
+            texto.innerHTML+="<p>Ancho: "+screen.width+"</p>";
+            texto.innerHTML+="<p>Altura: "+screen.width+"</p>";
+            texto.innerHTML+="<p>Ancho sin barras: "+screen.availWidth+"</p>";
+            texto.innerHTML+="<p>Altura sin barras: "+screen.availHeight+"</p>";
+            texto.innerHTML+="<p>Profundidad de color: "+screen.colorDepth+"</p>";
+            texto.innerHTML+="<p>Profundidad de color en bits: "+screen.pixelDepth+"</p>";
+            texto.innerHTML+="<p>Orientación: "+screen.orientation.type+"</p>";
+            texto.innerHTML+="<p>Orientación: "+screen.orientation.angle+"</p>";
+            /*screen.orientation.lock('landscape');*/
+            
+        }
+        function pantallaCompleta(){
+            const elemento=document.documentElement;
+            document.querySelector("h1").onclick=function(){
+                if(elemento.requestFullscreen){
+                    elemento.requestFullscreen()
+                }
+                else if(elemento.requestFullscreen){
+                    elemento.mozRequestFullscreen()
+                }
+                else if(elemento.requestFullscreen){
+                    elemento.webkitRequestFullscreen()
+                }
+                else if(elemento.requestFullscreen){
+                    elemento.msRequestFullscreen()
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1 onclick="pantallaCompleta()">Pantalla Completa</h1>
+    <div id="texto"></div>    
+    </div>
+</body>
+</html>
